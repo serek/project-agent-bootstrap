@@ -1,0 +1,14 @@
+# {{PROJECT_NAME}} — product contract index
+
+Product decisions belong in their owning PRD, with dated context, selected
+behavior, rationale, material rejected alternative, and remaining limits.
+Preserve prior reasoning. An approved individual decision does not imply that
+the whole PRD is accepted. Amend accepted requirements with an explicit
+version and supersession link; do not silently rewrite them or build a
+parallel approval log.
+
+| PRD | Outcome / contract | Status | Owner | Dependencies |
+| --- | --- | --- | --- | --- |
+| {{ID}} | {{OUTCOME}} | {{PROPOSED_OR_ACCEPTED}} | {{OWNER}} | {{DEPENDENCIES}} |
+
+Keep this index short. The PRDs, not this index, hold decision reasoning.

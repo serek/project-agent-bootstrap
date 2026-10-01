@@ -1,0 +1,30 @@
+# {{PROJECT_NAME}} — Cyrus and Linear integration
+
+**Activation:** {{DISABLED_UNTIL_AUTHORIZED_OR_ACTUAL_STATE}}
+
+## Ownership
+
+- Product contracts, code, tests, and evidence: {{REPOSITORY_OWNER}}
+- Task priorities, decision/status facts, and human acceptance: {{TRACKER_OWNER}}
+- Worktrees, sessions, delegation, retries, and lifecycle projection:
+  {{CYRUS_CONTRACT_SOURCE}}
+
+## Workflow mapping
+
+{{ACTUAL_TEAM_PROJECT_STATUSES_AND_BLOCKER_RULES}}
+
+Ready, explicit dispatch, agent review, delivery, and human acceptance are
+separate facts. Record who may change each state. Do not infer automatic pickup
+or status writes from an available board.
+
+## Executable description and handoff
+
+- Task template: {{CANONICAL_TASK_TEMPLATE}}
+- Actual delegation mechanism: {{DELEGATION_MECHANISM}}
+- Verified exact terminal marker and session-bound tool, if enabled:
+  {{HANDOFF_PROTOCOL_OR_NONE}}
+- Configured reviewer roles and evidence requirements: {{REVIEWERS}}
+- Publication/read-back and retry policy: {{PUBLICATION_AND_RETRY}}
+
+No credentials, model roster, global permissions, or runtime state belong in
+this document. Link the owning operational configuration instead.

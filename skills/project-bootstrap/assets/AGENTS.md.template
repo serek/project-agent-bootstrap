@@ -1,0 +1,34 @@
+# {{PROJECT_NAME}} — agent entry point
+
+## Current boundary
+
+{{IMPLEMENTED_CAPABILITY_AND_EXPLICITLY_UNIMPLEMENTED_BOUNDARIES}}
+
+## Authority and conflicts
+
+{{AUTHORITY_ORDER_WITH_ACTUAL_PATHS}}
+
+When sources conflict, preserve the higher-authority behavior and report the
+specific conflict. A task or available tool does not expand product authority.
+
+## Before changing files
+
+Read this file, the applicable contracts, current module and tests, and
+`TESTING.md`. For product decisions, preserve context and rationale in the
+owning PRD; use an ADR for a significant architectural trade-off. Follow
+applicable repository skills by their triggers.
+
+{{TARGET_SPECIFIC_SCOPE_AND_SAFETY_RULES}}
+
+## Testing and evidence
+
+Run the applicable current gate in `TESTING.md` and focused behavior checks.
+Record the actual revision, commands, results, review findings, and remaining
+gaps. A worker does not self-certify a required independent review.
+
+## Task delivery
+
+{{TASK_TEMPLATE_POINTER_IF_ENABLED}}
+{{TRACKER_OR_AGENT_INTEGRATION_POINTER_IF_ENABLED}}
+
+Delivery, merge, deployment, and human acceptance are distinct outcomes.

@@ -1,0 +1,10 @@
+# {{PROJECT_NAME}} — architecture decision index
+
+Use an ADR for a significant architectural trade-off: context, decision,
+alternatives, consequences, status, and dated revisions. Product behavior
+belongs in the owning PRD. Retain superseded ADRs with links to their
+replacement so history remains inspectable.
+
+| ADR | Trade-off | Status | Replaces / superseded by |
+| --- | --- | --- | --- |
+| {{ID}} | {{DECISION}} | {{PROPOSED_OR_ACCEPTED}} | {{LINK_OR_NONE}} |

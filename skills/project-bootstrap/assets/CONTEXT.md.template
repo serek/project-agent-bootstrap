@@ -1,0 +1,9 @@
+# {{PROJECT_NAME}} — domain vocabulary
+
+Define terms whose meanings change design or acceptance. Give each term one
+current meaning and link its governing PRD or ADR. Keep proposals labeled as
+proposals; this glossary does not approve a product contract.
+
+| Term | Current meaning | Governing source |
+| --- | --- | --- |
+| {{TERM}} | {{MEANING}} | {{PRD_OR_ADR}} |

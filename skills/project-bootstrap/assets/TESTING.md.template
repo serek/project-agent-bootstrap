@@ -1,0 +1,24 @@
+# {{PROJECT_NAME}} — testing contract
+
+## Current runnable gate
+
+{{EXACT_LOCAL_COMMANDS_AND_PREREQUISITES}}
+
+This is the gate that exists now. Record unmasked exit codes and material
+warnings. {{HOSTED_CI_STATUS_IF_ANY}}
+
+## Behavior checks
+
+Test the changed public entry point through real domain logic to an observable
+outcome. Derive expected results independently when the contract needs an
+oracle. Isolate external effects at adapters; keep fixtures deterministic.
+Start a feature or defect with a failing test when the accepted behavior can be
+expressed as one. Add recovery, retry, concurrency, or security cases where the
+changed contract exposes those risks, not as universal boilerplate.
+
+## Deferred or conditional checks
+
+{{FUTURE_UI_API_AGENT_SECURITY_OR_DEPLOYMENT_GATES_WITH_TRIGGERS}}
+
+Do not present a future harness as a currently passing gate. State an explicit
+applicability determination for changes to agent-facing authority surfaces.

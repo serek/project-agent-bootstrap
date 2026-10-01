@@ -1,0 +1,16 @@
+# {{TASK_ID}} — delivery evidence
+
+- Candidate revision/diff: {{REVISION_AND_DIFF}}
+- Authorized outcome and governing contract: {{OUTCOME_AND_CONTRACT}}
+- Changed paths and material design choices: {{CHANGES_AND_TRADEOFFS}}
+- Behavioral checks, exact commands, exits, and expected/actual results:
+  {{VERIFICATION}}
+- Security-evaluation applicability, harness, and receipt: {{SECURITY}}
+- Independent review identities, receipts, findings, and dispositions:
+  {{REVIEWS}}
+- Remaining gaps, owner, and resume condition: {{RESIDUALS}}
+- Actual commit/PR/tracker delivery facts: {{DELIVERY}}
+- Human acceptance: {{ACCEPTANCE_OR_PENDING}}
+
+Record facts once. Never promote a planned check, reviewer configuration, or
+draft PR into a passing gate or accepted outcome.

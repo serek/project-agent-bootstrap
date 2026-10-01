@@ -1,0 +1,19 @@
+# {{PROJECT_NAME}} — Claude entry point
+
+Read and follow [AGENTS.md](AGENTS.md). This page routes tasks to available
+project skills and owning documents; it is not a second policy.
+
+| Phase / trigger | Available skill or guide | Outcome |
+| --- | --- | --- |
+| Unclear domain choice | {{DOMAIN_DISCOVERY_SKILL_OR_GUIDE}} | Evidence, genuine choices, and rationale in the owning contract. |
+| Product behavior needs a spec | {{SPEC_SKILL_OR_GUIDE}} | Bounded outcomes, non-goals, and testable acceptance. |
+| Work needs slicing | {{SLICING_SKILL_OR_GUIDE}} | Independently verifiable vertical tasks and real dependencies. |
+| Module/interface design changes | {{DESIGN_SKILL_OR_GUIDE}} | Cohesive ownership and testable effect seams. |
+| Feature or defect implementation | {{IMPLEMENTATION_SKILL_OR_GUIDE}} | Focused behavior tests, implementation, and evidence. |
+| Candidate needs review | {{REVIEW_SKILL_OR_GUIDE}} | Findings against the task and project standards. |
+| Another session needs context | {{HANDOFF_SKILL_OR_GUIDE}} | Links to current facts, blockers, and next owner. |
+
+For executable work, read {{TASK_TEMPLATE_PATH}} and {{WORKFLOW_PATH}}. For
+product and architecture decisions, follow {{PRD_LIFECYCLE_PATH}} and
+{{ADR_LIFECYCLE_PATH}} where those documents exist. Remove unavailable skill
+rows rather than claiming a command ran or duplicating its instructions here.
