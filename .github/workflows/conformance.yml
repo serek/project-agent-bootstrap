@@ -1,0 +1,20 @@
+name: Conformance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check conformance
+        run: python3 scripts/check_conformance.py
+      - name: Test OpenCode preflight logic
+        run: node --test test/opencode.test.mjs
