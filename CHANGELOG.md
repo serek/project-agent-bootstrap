@@ -11,6 +11,8 @@ compatible features, and major for breaking changes.
 
 ## Unreleased
 
+- Add synthetic cross-stack reconciliation examples and validate mapped outputs
+  without requiring every responsibility action in each map.
 - Add Lean and Standard starter examples, an optional Linear team operating
   model, a conformance check, and risk-based quality, security reporting,
   contribution, and release guidance.

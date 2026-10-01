@@ -17,6 +17,8 @@ SKILL_FILE = SKILL_DIR / "SKILL.md"
 EXAMPLE_FILES = (
     ROOT / "examples" / "lean-example.md",
     ROOT / "examples" / "standard-example.md",
+    ROOT / "examples" / "web-portal-example.md",
+    ROOT / "examples" / "python-service-example.md",
 )
 REQUIRED_ASSETS = {
     "AGENTS.md.template",
@@ -79,12 +81,10 @@ def check_complete_examples(paths: tuple[Path, ...], root: Path = ROOT) -> None:
         action_rows = [line for line in table_rows if re.search(r"\|\s*(Reuse|Amend|Create|Omit)\s*\|", line)]
         if not action_rows:
             raise ValueError(f"responsibility map missing a reuse/amend/create/omit action in {path.name}")
-        for action in ("Reuse", "Amend", "Create", "Omit"):
-            if not any(re.search(rf"\|\s*{action}\s*\|", row) for row in action_rows):
-                raise ValueError(f"responsibility map missing {action} in {path.name}")
         fixture_dir = path.parent / path.stem.removesuffix("-example")
         if not fixture_dir.is_dir():
             raise ValueError(f"missing synthetic output directory for {path.name}")
+        fixture_root = fixture_dir.resolve()
         for row in action_rows:
             cells = [cell.strip().strip("`") for cell in row.strip("|").split("|")]
             output = cells[0]
@@ -94,6 +94,10 @@ def check_complete_examples(paths: tuple[Path, ...], root: Path = ROOT) -> None:
                 if not output.startswith(prefix):
                     raise ValueError(f"{action} row must name a fixture output under {prefix}: {output}")
                 fixture_output = root / output
+                try:
+                    fixture_output.resolve().relative_to(fixture_root)
+                except ValueError as error:
+                    raise ValueError(f"{action} output escapes its fixture directory: {output}") from error
                 if not fixture_output.is_file():
                     raise ValueError(f"missing adapted output named by responsibility map: {output}")
                 if PLACEHOLDER.search(fixture_output.read_text(encoding="utf-8")):
@@ -186,6 +190,34 @@ class NegativeConformanceTests(unittest.TestCase):
             (root / "examples" / "lean" / "TESTING.md").write_text("{{GATE}}", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "placeholder"):
                 check_complete_examples((example,), root)
+
+    def test_example_rejects_missing_mapped_output(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "examples" / "sample").mkdir(parents=True)
+            example = root / "examples" / "sample-example.md"
+            example.write_text(
+                "| Output | Action | Source | Reason |\n| --- | --- | --- | --- |\n"
+                "| examples/sample/AGENTS.md | Amend | AGENTS.md | Preserve boundary |\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "missing adapted output"):
+                check_complete_examples((example,), root)
+
+    def test_example_accepts_map_without_create(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            fixture = root / "examples" / "sample"
+            fixture.mkdir(parents=True)
+            example = root / "examples" / "sample-example.md"
+            example.write_text(
+                "| Output | Action | Source | Reason |\n| --- | --- | --- | --- |\n"
+                "| examples/sample/AGENTS.md | Amend | AGENTS.md | Preserve boundary |\n"
+                "| TESTING.md | Reuse | Existing checks | Keep owner |\n",
+                encoding="utf-8",
+            )
+            (fixture / "AGENTS.md").write_text("adapted", encoding="utf-8")
+            check_complete_examples((example,), root)
 
     def test_local_link_checker_rejects_missing_target(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
