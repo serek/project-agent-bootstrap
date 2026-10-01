@@ -24,8 +24,31 @@ For OpenCode's native skill discovery, copy the entire
 `skills/project-bootstrap/` directory into the target repository at
 `.agents/skills/project-bootstrap/` or `.opencode/skills/project-bootstrap/`.
 Check for an existing skill at that path before copying; keep the `assets/`
-directory beside `SKILL.md`. This package does not contain an executable
-OpenCode plugin.
+directory beside `SKILL.md`.
+
+## Optional OpenCode plugin
+
+The repository also provides a small local plugin for two read-only checks.
+The local development environment had OpenCode 1.18.32, but plugin registration
+has not yet passed a live smoke test. The plugin uses OpenCode's documented
+`@opencode-ai/plugin` helper. Its source is kept outside `.opencode/plugins/`,
+so opening this repository does not automatically load it.
+
+To install into a target project, copy `plugins/project-bootstrap.ts` into
+`.opencode/plugins/` and `src/opencode/` into
+`.opencode/src/opencode/`. The imports already match this layout. Restart
+OpenCode to load it. The tools are named
+`project_bootstrap_inventory` and `project_bootstrap_check_task`.
+
+The inventory tool takes no arguments and reports matching paths and
+categories only, with explicit scan errors and truncation status. It does not
+read contents, call the network, run shell commands, or write files. The task
+checker accepts a `description` string and checks for a first-line
+`ultrawork` trigger, numbered section headings 1–17 in
+order, and unresolved `{{...}}` placeholders. It reports structural facts
+only; it does not judge content quality, readiness, review, or acceptance.
+
+Run the dependency-free tests with `node --test test/opencode.test.mjs`.
 
 ## License
 
