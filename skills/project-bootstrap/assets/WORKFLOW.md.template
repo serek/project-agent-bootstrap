@@ -10,13 +10,17 @@
    Complete when it can be verified independently.
 4. **Implement:** choose tactics and private design within the approved scope.
    Preserve cohesive ownership, DRY knowledge, simple sufficient design, and
-   responsible-boundary fixes. Complete when changed behavior is covered.
-5. **Verify and review:** run `TESTING.md`, applicable security evaluation, and
-   actual independent reviewers under {{REVIEW_POLICY_POINTER}}. Complete when
-   material findings are resolved or honestly recorded as blockers.
+   responsible-boundary fixes. Complete when the agreed outcome is implemented
+   and its relevant checks are identified.
+5. **Verify and review:** choose checks by risk under `TESTING.md`; obtain the
+   independent review required by {{REVIEW_POLICY_POINTER}}. Record the exact
+   candidate reviewed, reviewer, findings, and dispositions. A configured
+   reviewer or an unrun review is not evidence of review. Complete when checks
+   have results and material findings are resolved or recorded as blockers.
 6. **Deliver:** record evidence bound to the candidate and use only authorized
    Git/tracker actions. A draft PR with outstanding checks is not completion.
-7. **Accept:** {{HUMAN_ACCEPTANCE_OWNER}} decides whether the delivered result
-   meets the agreed outcome. Engineering delivery never implies acceptance.
+7. **Accept:** {{HUMAN_ACCEPTANCE_OWNER}} records acceptance or rejection
+   against the agreed outcome. Delivery and independent review do not imply
+   human acceptance.
 
 {{PROJECT_SPECIFIC_EXCEPTION_OR_NONE}}

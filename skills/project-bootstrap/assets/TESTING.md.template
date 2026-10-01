@@ -1,24 +1,36 @@
 # {{PROJECT_NAME}} — testing contract
 
-## Current runnable gate
+## Runnable checks and parity
 
 {{EXACT_LOCAL_COMMANDS_AND_PREREQUISITES}}
 
-This is the gate that exists now. Record unmasked exit codes and material
-warnings. {{HOSTED_CI_STATUS_IF_ANY}}
+Keep the local command set aligned with the checks required in CI. Record which
+checks actually run in CI and which are local-only; do not imply a hosted gate
+exists until it does. Record unmasked exit codes and material warnings.
+{{HOSTED_CI_STATUS_IF_ANY}}
 
-## Behavior checks
+## Choose checks by risk
 
-Test the changed public entry point through real domain logic to an observable
-outcome. Derive expected results independently when the contract needs an
-oracle. Isolate external effects at adapters; keep fixtures deterministic.
-Start a feature or defect with a failing test when the accepted behavior can be
-expressed as one. Add recovery, retry, concurrency, or security cases where the
-changed contract exposes those risks, not as universal boilerplate.
+For behavior changes, exercise the public entry point through real domain logic
+to an observable outcome. Keep checks deterministic and derive expected results
+independently when the contract needs an oracle. Isolate external effects at
+adapters.
 
-## Deferred or conditional checks
+- Low risk (documentation, formatting, or isolated mechanical changes): inspect
+  the diff and run relevant lightweight checks.
+- Normal risk (behavior changes): add deterministic behavioral and regression
+  checks for the changed contract.
+- Elevated risk: add integration, recovery, migration, security, concurrency,
+  or performance checks when the changed surface makes that failure mode
+  relevant. State why each applicable check is covered or deferred.
+
+Start with a failing test when the accepted behavior can be expressed as one.
+Choose checks for evidence, not a blanket coverage target or ceremonial gate.
+
+## Deferred and unavailable checks
 
 {{FUTURE_UI_API_AGENT_SECURITY_OR_DEPLOYMENT_GATES_WITH_TRIGGERS}}
 
-Do not present a future harness as a currently passing gate. State an explicit
-applicability determination for changes to agent-facing authority surfaces.
+Record applicable checks that could not run, why, and their impact. Do not
+present a future harness as a passing gate. State whether specialized security
+or authority-boundary evaluation applies and record its evidence when required.

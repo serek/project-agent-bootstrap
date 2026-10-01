@@ -25,6 +25,11 @@ or verified Cyrus/Linear integration justify the extra documents. The user may
 choose either. The included 17-section task prompt is a selectable convention,
 not a universal Cyrus protocol.
 
+When the target uses Linear and needs team-level planning guidance, consult
+[`references/LINEAR-OPERATING-MODEL.md`](references/LINEAR-OPERATING-MODEL.md);
+adapt it to observed configuration and read back actual state before relying
+on it.
+
 ## Adapt the assets
 
 Read only the assets selected by the responsibility map. Populate them from
