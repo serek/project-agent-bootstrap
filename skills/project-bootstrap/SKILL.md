@@ -18,12 +18,20 @@ the implemented product boundary and any authorization or data-safety rules.
 Produce a responsibility map for each proposed document: **reuse, amend,
 create, or omit**, with the existing owner and reason. Flag contradictions and
 unknowns; do not silently supersede an accepted decision or overwrite user work.
+When observed code or CI conflicts with accepted documentation, propose a
+reconciliation in the existing owner before creating new policy. Report only
+gates and reviews that actually ran.
 
 Choose **Lean** for a small project with one current gate and a simple review
 path; choose **Standard** when sustained product contracts, multiple work lanes,
 or verified Cyrus/Linear integration justify the extra documents. The user may
 choose either. The included 17-section task prompt is a selectable convention,
 not a universal Cyrus protocol.
+
+When the target uses Linear and needs team-level planning guidance, consult
+[`references/LINEAR-OPERATING-MODEL.md`](references/LINEAR-OPERATING-MODEL.md);
+adapt it to observed configuration and read back actual state before relying
+on it.
 
 ## Adapt the assets
 
