@@ -18,6 +18,9 @@ the implemented product boundary and any authorization or data-safety rules.
 Produce a responsibility map for each proposed document: **reuse, amend,
 create, or omit**, with the existing owner and reason. Flag contradictions and
 unknowns; do not silently supersede an accepted decision or overwrite user work.
+When observed code or CI conflicts with accepted documentation, propose a
+reconciliation in the existing owner before creating new policy. Report only
+gates and reviews that actually ran.
 
 Choose **Lean** for a small project with one current gate and a simple review
 path; choose **Standard** when sustained product contracts, multiple work lanes,

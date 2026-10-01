@@ -42,6 +42,9 @@ Apache-2.0; see [LICENSE](LICENSE).
 - `examples/lean-example.md` and `examples/standard-example.md` — complete
   illustrative responsibility maps with synthetic adapted documents; these
   are documentation fixtures, not runnable sample applications.
+- `examples/web-portal-example.md` and `examples/python-service-example.md` —
+  synthetic cross-stack reconciliation cases with illustrative adapted
+  documents.
 - `skills/project-bootstrap/references/LINEAR-OPERATING-MODEL.md` — optional,
   team-neutral guidance for mapping Linear planning and execution to observed
   configuration.
